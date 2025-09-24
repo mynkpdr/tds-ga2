@@ -15,13 +15,6 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: List uv cache contents
-        run: |
-          echo "Listing ~/.uv contents:"
-          ls -l ~/.uv
-          echo "-----"
-          ls -l ~/.cache/uv
           
       - name: Cache Python packages
         id: cache-step
@@ -41,6 +34,14 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
+
+      - name: List uv cache contents
+        run: |
+          echo "Listing ~/.uv contents:"
+          ls -l ~
+          ls -l ~/.cache/uv
+
+          
       - name: Fetch ISS location data
         run: | # python
           uv run --with requests python << 'EOF'
