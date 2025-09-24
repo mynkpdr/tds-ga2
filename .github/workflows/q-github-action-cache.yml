@@ -16,6 +16,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: List uv cache contents
+        run: |
+          echo "Listing ~/.uv contents:"
+          ls -l ~/.uv
+          echo "-----"
+          ls -l ~/.cache/uv
+          
       - name: Cache Python packages
         id: cache-step
         uses: actions/cache@v4
