@@ -34,13 +34,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v5
 
-
-      - name: List uv cache contents
-        run: |
-          echo "Listing ~/.uv contents:"
-          ls -l ~
-          ls -l ~/.cache/uv
-
           
       - name: Fetch ISS location data
         run: | # python
